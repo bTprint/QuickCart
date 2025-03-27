@@ -1,9 +1,8 @@
 import { serve } from "inngest/next";
-import { Inngest } from "inngest";
-import { syncUserCreation, syncUserDeletion, syncUserUpdation } from "@/config/inngest";
+import { inngest, syncUserCreation, syncUserDeletion, syncUserUpdation } from "@/config/inngest";
 
 export const { GET, POST, PUT } = serve({
-    client : Inngest,
+    client : inngest,
     functions : [
         syncUserCreation,
         syncUserUpdation,
