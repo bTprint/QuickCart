@@ -17,7 +17,7 @@ const Cart = () => {
         <div className="flex-1">
           <div className="flex items-center justify-between mb-8 border-b border-gray-500/30 pb-6">
             <p className="text-2xl md:text-3xl text-gray-500">
-              Your <span className="font-medium text-orange-600">Cart</span>
+              Cosul <span className="font-medium text-orange-600">tau</span>
             </p>
             <p className="text-lg md:text-xl text-gray-500/80">{getCartCount()} Items</p>
           </div>
@@ -26,13 +26,13 @@ const Cart = () => {
               <thead className="text-left">
                 <tr>
                   <th className="text-nowrap pb-6 md:px-4 px-1 text-gray-600 font-medium">
-                    Product Details
+                    Detalii Tombola
                   </th>
                   <th className="pb-6 md:px-4 px-1 text-gray-600 font-medium">
-                    Price
+                    Pret
                   </th>
                   <th className="pb-6 md:px-4 px-1 text-gray-600 font-medium">
-                    Quantity
+                    Cantitate
                   </th>
                   <th className="pb-6 md:px-4 px-1 text-gray-600 font-medium">
                     Subtotal
@@ -62,7 +62,7 @@ const Cart = () => {
                             className="md:hidden text-xs text-orange-600 mt-1"
                             onClick={() => updateCartQuantity(product._id, 0)}
                           >
-                            Remove
+                            Sterge
                           </button>
                         </div>
                         <div className="text-sm hidden md:block">
@@ -71,11 +71,11 @@ const Cart = () => {
                             className="text-xs text-orange-600 mt-1"
                             onClick={() => updateCartQuantity(product._id, 0)}
                           >
-                            Remove
+                            Sterge
                           </button>
                         </div>
                       </td>
-                      <td className="py-4 md:px-4 px-1 text-gray-600">${product.offerPrice}</td>
+                      <td className="py-4 md:px-4 px-1 text-gray-600">{product.offerPrice} RON</td>
                       <td className="py-4 md:px-4 px-1">
                         <div className="flex items-center md:gap-2 gap-1">
                           <button onClick={() => updateCartQuantity(product._id, cartItems[itemId] - 1)}>
@@ -95,7 +95,7 @@ const Cart = () => {
                           </button>
                         </div>
                       </td>
-                      <td className="py-4 md:px-4 px-1 text-gray-600">${(product.offerPrice * cartItems[itemId]).toFixed(2)}</td>
+                      <td className="py-4 md:px-4 px-1 text-gray-600">RON {(product.offerPrice * cartItems[itemId]).toFixed(2)} </td>
                     </tr>
                   );
                 })}
@@ -108,7 +108,7 @@ const Cart = () => {
               src={assets.arrow_right_icon_colored}
               alt="arrow_right_icon_colored"
             />
-            Continue Shopping
+            Inapoi la Tombole
           </button>
         </div>
         <OrderSummary />
